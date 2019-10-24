@@ -1,5 +1,5 @@
 {
-  "name": "softcommerce/omnipay-paytrace",
+  "name": "unionco/omnipay-paytrace",
   "type": "library",
   "description": "PayTrace gateway for the Omnipay payment processing library",
   "keywords": [
@@ -21,10 +21,7 @@
     "psr-4": { "Omnipay\\Paytrace\\" : "src/" }
   },
   "require": {
-    "omnipay/common": "~2.0"
-  },
-  "require-dev": {
-    "omnipay/tests": "~2.0"
+    "league/omnipay": "^3"
   },
   "extra": {
     "branch-alias": {
