@@ -29,11 +29,17 @@ class Check
         return $this->parameters->all();
     }
 
+    /**
+     * @param string $key
+     */
     protected function getParameter($key)
     {
         return $this->parameters->get($key);
     }
 
+    /**
+     * @param string $key
+     */
     protected function setParameter($key, $value)
     {
         $this->parameters->set($key, $value);
@@ -132,6 +138,9 @@ class Check
         return $this->getParameter('billingFirstName');
     }
 
+    /**
+     * @param string $value
+     */
     public function setBillingFirstName($value)
     {
         return $this->setParameter('billingFirstName', $value);
@@ -142,6 +151,9 @@ class Check
         return $this->getParameter('billingLastName');
     }
 
+    /**
+     * @param null|string $value
+     */
     public function setBillingLastName($value)
     {
         return $this->setParameter('billingLastName', $value);
@@ -266,6 +278,9 @@ class Check
         return $this->getParameter('shippingFirstName');
     }
 
+    /**
+     * @param string $value
+     */
     public function setShippingFirstName($value)
     {
         return $this->setParameter('shippingFirstName', $value);
@@ -276,6 +291,9 @@ class Check
         return $this->getParameter('shippingLastName');
     }
 
+    /**
+     * @param null|string $value
+     */
     public function setShippingLastName($value)
     {
         return $this->setParameter('shippingLastName', $value);
