@@ -2,12 +2,23 @@
 
 namespace Omnipay\Paytrace\Message;
 
+use Omnipay\Common\Message\ResponseInterface;
+
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
+    /** @var string $method */
     protected $method;
+
+    /** @var string $type */
     protected $type;
+
+    /** @var string $responseClass */
     protected $responseClass;
 
+    /**
+     * @param mixed $data
+     * @return ResponseInterface
+     */
     public function sendData($data)
     {
         $headers = [
@@ -21,69 +32,117 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
             $headers,
             'parmlist=' . $this->preparePostData($data)
         );
-        // ->send();
+
         $responseClass = $this->responseClass;
-        return $this->response = new $responseClass($this, $httpResponse->getBody());
+
+        /**
+         * @var ResponseInterface
+         * @psalm-suppress InvalidStringClass
+         **/
+        $response = new $responseClass($this, $httpResponse->getBody());
+        $this->response = $response;
+
+        return $response;
     }
 
+    /**
+     * @return string
+     */
     public function getUserName()
     {
         return $this->getParameter('username');
     }
 
+    /**
+     * @param string $value
+     * @return self
+     */
     public function setUserName($value)
     {
         return $this->setParameter('username', $value);
     }
 
+    /**
+     * @return string
+     */
     public function getPassword()
     {
         return $this->getParameter('password');
     }
 
+    /**
+     * @param string $value
+     * @return self
+     */
     public function setPassword($value)
     {
         return $this->setParameter('password', $value);
     }
 
+    /**
+     * @return string
+     */
     public function getEndpoint()
     {
         return $this->getParameter('endpoint');
     }
 
+    /**
+     * @param string $value
+     * @return self
+     */
     public function setEndpoint($value)
     {
         return $this->setParameter('endpoint', $value);
     }
 
+    /**
+     * @return string
+     */
     public function getInvoiceId()
     {
         return $this->getParameter('invoiceId');
     }
 
+    /**
+     * @param string $value
+     * @return self
+     */
     public function setInvoiceId($value)
     {
         return $this->setParameter('invoiceId', $value);
     }
 
+    /**
+     * @return string
+     */
     public function getCardReference()
     {
         return $this->getParameter('custid');
     }
 
+    /**
+     * @param string $value
+     * @return self
+     */
     public function setCardReference($value)
     {
         return $this->setParameter('custid', $value);
     }
 
     /**
-     * @return \Omnipay\Common\CreditCard|\Omnipay\Paytrace\Check
+     * @return \Omnipay\Common\CreditCard|\Omnipay\Paytrace\Check|null
      */
     protected function getBillingSource()
     {
         return null; // @codeCoverageIgnore
     }
 
+    /**
+     * @return array
+     *
+     * @psalm-return array{AMOUNT: string, DESCRIPTION: string, INVOICE: mixed, BNAME?: mixed, PHONE?: mixed, EMAIL?: mixed, BADDRESS?: mixed, BADDRESS2?: mixed, BCITY?: mixed, BCOUNTRY?: mixed, BSTATE?: mixed, BZIP?: mixed, SADDRESS?: mixed, SADDRESS2?: mixed, SCITY?: mixed, SCOUNTRY?: mixed, SSTATE?: mixed, SZIP?: mixed}
+     */
     protected function getBillingData()
     {
         $data = [
@@ -118,6 +177,10 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $data;
     }
 
+    /**
+     * @param array $data
+     * @return string
+     */
     protected function preparePostData($data)
     {
         $postData = '';

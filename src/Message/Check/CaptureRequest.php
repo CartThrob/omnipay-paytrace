@@ -2,6 +2,7 @@
 
 namespace Omnipay\Paytrace\Message\Check;
 
+/** @psalm-suppress PropertyNotSetInConstructor */
 class CaptureRequest extends AbstractRequest
 {
     protected $method = 'ManageCheck';

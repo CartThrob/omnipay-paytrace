@@ -15,6 +15,9 @@ class CreateCardResponse extends AuthorizeResponse
         && (!isset($this->data['ERROR']) || empty($this->data['ERROR']));
     }
 
+    /**
+     * @return string|null
+     */
     public function getCardReference()
     {
         return isset($this->data['CUSTOMERID']) ? $this->data['CUSTOMERID'] : null;

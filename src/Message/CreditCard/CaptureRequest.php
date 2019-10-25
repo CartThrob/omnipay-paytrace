@@ -2,6 +2,7 @@
 
 namespace Omnipay\Paytrace\Message\CreditCard;
 
+/** @psalm-suppress PropertyNotSetInConstructor */
 class CaptureRequest extends AbstractRequest
 {
     protected $type = 'Capture';

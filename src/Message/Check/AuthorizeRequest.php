@@ -2,6 +2,10 @@
 
 namespace Omnipay\Paytrace\Message\Check;
 
+use Omnipay\Paytrace\Exception\InvalidCheckException;
+
+
+/** @psalm-suppress PropertyNotSetInConstructor */
 class AuthorizeRequest extends AbstractRequest
 {
     protected $method = 'ProcessCheck';
@@ -9,11 +13,15 @@ class AuthorizeRequest extends AbstractRequest
 
     /**
      * @inheritdoc
+     * @throws InvalidCheckException
      */
     public function getData()
     {
         $this->validate('amount', 'check');
         $check = $this->getCheck();
+        if (!$check) {
+            throw new InvalidCheckException('Check is null');
+        }
         $check->validate();
         $data = $this->getBaseData();
         $data['DDA'] = $check->getBankAccount();

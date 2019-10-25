@@ -11,6 +11,11 @@ abstract class AbstractRequest extends \Omnipay\Paytrace\Message\AbstractRequest
         return $this->getCard();
     }
 
+    /**
+     * @return array
+     *
+     * @psalm-return array{TERMS: string, UN: mixed, PSWD: mixed, METHOD: mixed, TRANXTYPE: mixed}
+     */
     protected function getBaseData()
     {
         return [
@@ -22,6 +27,11 @@ abstract class AbstractRequest extends \Omnipay\Paytrace\Message\AbstractRequest
         ];
     }
 
+    /**
+     * @return (false|string)[]
+     *
+     * @psalm-return array{CC: string, EXPYR: false|string, EXPMNTH: string, CSC: string}
+     */
     protected function getCardData()
     {
         $this->validate('card');
@@ -29,8 +39,8 @@ abstract class AbstractRequest extends \Omnipay\Paytrace\Message\AbstractRequest
         $card = $this->getCard();
         $data = array();
         $data['CC'] = $card->getNumber();
-        $data['EXPYR'] = substr($card->getExpiryYear(), -2);
-        $data['EXPMNTH'] = str_pad($card->getExpiryMonth(), 2, '0', STR_PAD_LEFT);
+        $data['EXPYR'] = substr("{$card->getExpiryYear()}", -2);
+        $data['EXPMNTH'] = str_pad("{$card->getExpiryMonth()}", 2, '0', STR_PAD_LEFT);
         $data['CSC'] = $card->getCvv();
         return $data;
     }

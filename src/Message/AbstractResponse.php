@@ -8,6 +8,11 @@ abstract class AbstractResponse extends \Omnipay\Common\Message\AbstractResponse
 {
     const TRANSACTION_KEY = '';
 
+    /**
+     * @param RequestInterface $request
+     * @param mixed $data
+     * @return self
+     */
     public function __construct(RequestInterface $request, $data)
     {
         $parsedData = [];
@@ -22,11 +27,17 @@ abstract class AbstractResponse extends \Omnipay\Common\Message\AbstractResponse
         parent::__construct($request, $parsedData);
     }
 
+    /**
+     * @return string|null
+     */
     public function getTransactionReference()
     {
         return isset($this->data[static::TRANSACTION_KEY]) ? $this->data[static::TRANSACTION_KEY] : null;
     }
 
+    /**
+     * @return string|null
+     */
     public function getMessage()
     {
         if ($this->isSuccessful()) {
@@ -41,6 +52,9 @@ abstract class AbstractResponse extends \Omnipay\Common\Message\AbstractResponse
         }
     }
 
+    /**
+     * @return string|null
+     */
     public function getCode()
     {
         if ($this->isSuccessful()) {

@@ -2,11 +2,15 @@
 
 namespace Omnipay\Paytrace\Message\CreditCard;
 
+/** @psalm-suppress PropertyNotSetInConstructor */
 class RefundRequest extends AbstractRequest
 {
+    /** @var string */
     protected $type = 'Refund';
+    /** @var string */
     protected $responseClass = 'Omnipay\Paytrace\Message\CreditCard\CaptureResponse';
 
+    /** @inheritdoc */
     public function getData()
     {
         if ($this->getCard()) {
