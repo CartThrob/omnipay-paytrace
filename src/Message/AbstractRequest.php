@@ -15,12 +15,13 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
             'Content-type' => 'application/x-www-form-urlencoded',
             'Contenttransfer-encoding' => 'text',
         ];
-        $httpResponse = $this->httpClient->post(
+        $httpResponse = $this->httpClient->request(
+            'POST',
             $this->getEndpoint(),
             $headers,
             'parmlist=' . $this->preparePostData($data)
-        )
-            ->send();
+        );
+        // ->send();
         $responseClass = $this->responseClass;
         return $this->response = new $responseClass($this, $httpResponse->getBody());
     }
