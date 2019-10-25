@@ -1,5 +1,10 @@
 # Omnipay: PayTrace
 
+Forked by Union. Most of the code has been unaltered, but a few updates have been made to be compatible with Omnipay ^3.0.
+Below is the original README.
+
+# Omnipay: PayTrace
+
 **PayTrace driver for the Omnipay PHP payment processing library**
 
 [![Build Status](https://travis-ci.org/iddqdidkfa/omnipay-paytrace.png?branch=master)](https://travis-ci.org/iddqdidkfa/omnipay-paytrace)
