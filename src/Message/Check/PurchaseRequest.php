@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\Paytrace\Message\Check;
+namespace unionco\omnipay\paytrace\Message\Check;
 
 /** @psalm-suppress PropertyNotSetInConstructor */
 class PurchaseRequest extends AuthorizeRequest

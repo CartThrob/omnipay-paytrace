@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\Paytrace\Message;
+namespace unionco\omnipay\paytrace\Message;
 
 use Omnipay\Common\Message\RequestInterface;
 

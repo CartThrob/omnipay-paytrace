@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\Paytrace;
+namespace unionco\omnipay\paytrace;
 
 use Omnipay\Common\Message\AbstractRequest;
 use Omnipay\Common\Message\AbstractResponse;
@@ -37,7 +37,7 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
     public function authorize(array $params = [])
     {
         return $this->createRequest(
-            '\Omnipay\Paytrace\Message\\' . static::GATEWAY_TYPE . '\AuthorizeRequest',
+            '\unionco\omnipay\paytrace\Message\\' . static::GATEWAY_TYPE . '\AuthorizeRequest',
             $params
         );
     }
@@ -49,7 +49,7 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
     public function createCard(array $params = [])
     {
         return $this->createRequest(
-            '\Omnipay\Paytrace\Message\\' . static::GATEWAY_TYPE . '\CreateCardRequest',
+            '\unionco\omnipay\paytrace\Message\\' . static::GATEWAY_TYPE . '\CreateCardRequest',
             $params
         );
     }
@@ -61,7 +61,7 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
     public function updateCard(array $params = [])
     {
         return $this->createRequest(
-            '\Omnipay\Paytrace\Message\\' . static::GATEWAY_TYPE . '\UpdateCardRequest',
+            '\unionco\omnipay\paytrace\Message\\' . static::GATEWAY_TYPE . '\UpdateCardRequest',
             $params
         );
     }
@@ -72,7 +72,7 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
      */
     public function capture(array $params = [])
     {
-        return $this->createRequest('\Omnipay\Paytrace\Message\\' . static::GATEWAY_TYPE . '\CaptureRequest', $params);
+        return $this->createRequest('\unionco\omnipay\paytrace\Message\\' . static::GATEWAY_TYPE . '\CaptureRequest', $params);
     }
 
     /**
@@ -81,7 +81,7 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
      */
     public function purchase(array $params = [])
     {
-        return $this->createRequest('\Omnipay\Paytrace\Message\\' . static::GATEWAY_TYPE . '\PurchaseRequest', $params);
+        return $this->createRequest('\unionco\omnipay\paytrace\Message\\' . static::GATEWAY_TYPE . '\PurchaseRequest', $params);
     }
 
     /**
@@ -90,7 +90,7 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
      */
     public function void(array $params = [])
     {
-        return $this->createRequest('\Omnipay\Paytrace\Message\\' . static::GATEWAY_TYPE . '\VoidRequest', $params);
+        return $this->createRequest('\unionco\omnipay\paytrace\Message\\' . static::GATEWAY_TYPE . '\VoidRequest', $params);
     }
 
     /**
@@ -99,7 +99,7 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
      */
     public function refund(array $params = [])
     {
-        return $this->createRequest('\Omnipay\Paytrace\Message\\' . static::GATEWAY_TYPE . '\RefundRequest', $params);
+        return $this->createRequest('\unionco\omnipay\paytrace\Message\\' . static::GATEWAY_TYPE . '\RefundRequest', $params);
     }
 
     /**

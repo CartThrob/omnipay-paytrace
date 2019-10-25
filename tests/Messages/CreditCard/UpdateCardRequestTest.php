@@ -1,12 +1,12 @@
 <?php
 
-namespace Omnipay\Paytrace\Message\CreditCard;
+namespace unionco\omnipay\paytrace\Message\CreditCard;
 
 use Omnipay\Tests\TestCase;
 
 class UpdateCardRequestTest extends TestCase
 {
-    /** @var  \Omnipay\Paytrace\Message\CreditCard\UpdateCardRequest $request */
+    /** @var  \unionco\omnipay\paytrace\Message\CreditCard\UpdateCardRequest $request */
     private $request;
 
     public function setUp()

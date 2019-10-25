@@ -1,12 +1,12 @@
 <?php
 
-namespace Omnipay\Paytrace\Message\CreditCard;
+namespace unionco\omnipay\paytrace\Message\CreditCard;
 
 use Omnipay\Tests\TestCase;
 
 class VoidRequestTest extends TestCase
 {
-    /** @var  \Omnipay\Paytrace\Message\CreditCard\VoidRequest $request */
+    /** @var  \unionco\omnipay\paytrace\Message\CreditCard\VoidRequest $request */
     private $request;
 
     public function setUp()

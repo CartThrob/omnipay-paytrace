@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\Paytrace\Message\Check;
+namespace unionco\omnipay\paytrace\Message\Check;
 
 use Omnipay\Tests\TestCase;
 

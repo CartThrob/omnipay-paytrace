@@ -1,12 +1,12 @@
 <?php
 
-namespace Omnipay\Paytrace\Message\Check;
+namespace unionco\omnipay\paytrace\Message\Check;
 
 use Omnipay\Tests\TestCase;
 
 class AuthorizeRequestTest extends TestCase
 {
-    /** @var  \Omnipay\Paytrace\Message\Check\AuthorizeRequest $request */
+    /** @var  \unionco\omnipay\paytrace\Message\Check\AuthorizeRequest $request */
     private $request;
 
     public function setUp()

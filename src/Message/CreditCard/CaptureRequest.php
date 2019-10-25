@@ -1,12 +1,12 @@
 <?php
 
-namespace Omnipay\Paytrace\Message\CreditCard;
+namespace unionco\omnipay\paytrace\Message\CreditCard;
 
 /** @psalm-suppress PropertyNotSetInConstructor */
 class CaptureRequest extends AbstractRequest
 {
     protected $type = 'Capture';
-    protected $responseClass = 'Omnipay\Paytrace\Message\CreditCard\CaptureResponse';
+    protected $responseClass = 'unionco\omnipay\paytrace\Message\CreditCard\CaptureResponse';
 
     public function getData()
     {

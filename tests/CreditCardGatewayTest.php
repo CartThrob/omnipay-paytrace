@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\Paytrace;
+namespace unionco\omnipay\paytrace;
 
 class CreditCardGatewayTest extends \Omnipay\Tests\GatewayTestCase
 {
@@ -26,7 +26,7 @@ class CreditCardGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $this->gateway->setPassword('demo123');
         $response = $this->gateway->authorize($this->options)->send();
-        $this->assertInstanceOf('\Omnipay\Paytrace\Message\CreditCard\AuthorizeResponse', $response);
+        $this->assertInstanceOf('\unionco\omnipay\paytrace\Message\CreditCard\AuthorizeResponse', $response);
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
         $this->assertNotEmpty($response->getTransactionReference());
@@ -43,7 +43,7 @@ class CreditCardGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $this->gateway->setPassword('111');
         $response = $this->gateway->authorize($this->options)->send();
-        $this->assertInstanceOf('\Omnipay\Paytrace\Message\CreditCard\AuthorizeResponse', $response);
+        $this->assertInstanceOf('\unionco\omnipay\paytrace\Message\CreditCard\AuthorizeResponse', $response);
         $this->assertFalse($response->isSuccessful());
         $this->assertSame('998', $response->getCode());
         $this->assertSame('Log in failed.', $response->getMessage());
@@ -55,7 +55,7 @@ class CreditCardGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $this->gateway->setPassword('demo123');
         $response = $this->gateway->purchase($this->options)->send();
-        $this->assertInstanceOf('\Omnipay\Paytrace\Message\CreditCard\AuthorizeResponse', $response);
+        $this->assertInstanceOf('\unionco\omnipay\paytrace\Message\CreditCard\AuthorizeResponse', $response);
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
         $this->assertNotEmpty($response->getTransactionReference());
@@ -73,7 +73,7 @@ class CreditCardGatewayTest extends \Omnipay\Tests\GatewayTestCase
         $this->gateway->setPassword('demo123');
         $options = array_merge(array('cardReference' => 1234567890), $this->options);
         $response = $this->gateway->purchase($options)->send();
-        $this->assertInstanceOf('\Omnipay\Paytrace\Message\CreditCard\AuthorizeResponse', $response);
+        $this->assertInstanceOf('\unionco\omnipay\paytrace\Message\CreditCard\AuthorizeResponse', $response);
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
         $this->assertNotEmpty($response->getTransactionReference());
@@ -90,7 +90,7 @@ class CreditCardGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $this->gateway->setPassword('111');
         $response = $this->gateway->purchase($this->options)->send();
-        $this->assertInstanceOf('\Omnipay\Paytrace\Message\CreditCard\AuthorizeResponse', $response);
+        $this->assertInstanceOf('\unionco\omnipay\paytrace\Message\CreditCard\AuthorizeResponse', $response);
         $this->assertFalse($response->isSuccessful());
         $this->assertSame('998', $response->getCode());
         $this->assertSame('Log in failed.', $response->getMessage());
@@ -102,7 +102,7 @@ class CreditCardGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $this->gateway->setPassword('demo123');
         $response = $this->gateway->refund($this->options)->send();
-        $this->assertInstanceOf('\Omnipay\Paytrace\Message\CreditCard\CaptureResponse', $response);
+        $this->assertInstanceOf('\unionco\omnipay\paytrace\Message\CreditCard\CaptureResponse', $response);
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
         $this->assertNotEmpty($response->getTransactionReference());
@@ -121,7 +121,7 @@ class CreditCardGatewayTest extends \Omnipay\Tests\GatewayTestCase
         $options = array_merge(array('transactionReference' => 89731989), $this->options);
         unset($options['card']);
         $response = $this->gateway->refund($options)->send();
-        $this->assertInstanceOf('\Omnipay\Paytrace\Message\CreditCard\CaptureResponse', $response);
+        $this->assertInstanceOf('\unionco\omnipay\paytrace\Message\CreditCard\CaptureResponse', $response);
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
         $this->assertSame('89731989', $response->getTransactionReference());
@@ -138,7 +138,7 @@ class CreditCardGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $this->gateway->setPassword('111');
         $response = $this->gateway->refund($this->options)->send();
-        $this->assertInstanceOf('\Omnipay\Paytrace\Message\CreditCard\CaptureResponse', $response);
+        $this->assertInstanceOf('\unionco\omnipay\paytrace\Message\CreditCard\CaptureResponse', $response);
         $this->assertFalse($response->isSuccessful());
         $this->assertSame('998', $response->getCode());
         $this->assertSame('Log in failed.', $response->getMessage());
@@ -150,7 +150,7 @@ class CreditCardGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $this->gateway->setPassword('demo123');
         $response = $this->gateway->createCard($this->options)->send();
-        $this->assertInstanceOf('\Omnipay\Paytrace\Message\CreditCard\CreateCardResponse', $response);
+        $this->assertInstanceOf('\unionco\omnipay\paytrace\Message\CreditCard\CreateCardResponse', $response);
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
         $this->assertNull($response->getTransactionReference());
@@ -174,7 +174,7 @@ class CreditCardGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $response = $request->send();
 
-        $this->assertInstanceOf('\Omnipay\Paytrace\Message\CreditCard\CreateCardResponse', $response);
+        $this->assertInstanceOf('\unionco\omnipay\paytrace\Message\CreditCard\CreateCardResponse', $response);
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
         $this->assertNull($response->getTransactionReference());

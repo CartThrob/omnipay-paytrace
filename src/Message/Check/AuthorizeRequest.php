@@ -1,8 +1,8 @@
 <?php
 
-namespace Omnipay\Paytrace\Message\Check;
+namespace unionco\omnipay\paytrace\Message\Check;
 
-use Omnipay\Paytrace\Exception\InvalidCheckException;
+use unionco\omnipay\paytrace\Exception\InvalidCheckException;
 
 
 /** @psalm-suppress PropertyNotSetInConstructor */

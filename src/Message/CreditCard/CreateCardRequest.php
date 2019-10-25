@@ -1,12 +1,12 @@
 <?php
 
-namespace Omnipay\Paytrace\Message\CreditCard;
+namespace unionco\omnipay\paytrace\Message\CreditCard;
 
 /** @psalm-suppress PropertyNotSetInConstructor */
 class CreateCardRequest extends AuthorizeRequest
 {
     protected $type = 'CreateCustomer';
-    protected $responseClass = 'Omnipay\Paytrace\Message\CreditCard\CreateCardResponse';
+    protected $responseClass = 'unionco\omnipay\paytrace\Message\CreditCard\CreateCardResponse';
 
     /**
      * @inheritdoc

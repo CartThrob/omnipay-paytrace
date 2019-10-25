@@ -1,9 +1,9 @@
 <?php
 
-namespace Omnipay\Paytrace;
+namespace unionco\omnipay\paytrace;
 
 use Omnipay\Common\Helper;
-use Omnipay\Paytrace\Exception\InvalidCheckException;
+use unionco\omnipay\paytrace\Exception\InvalidCheckException;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 class Check

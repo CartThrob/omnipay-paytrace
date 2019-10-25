@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\Paytrace\Exception;
+namespace unionco\omnipay\paytrace\Exception;
 
 use Omnipay\Common\Exception\OmnipayException;
 
