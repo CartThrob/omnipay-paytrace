@@ -1,5 +1,5 @@
 {
-  "name": "unionco/omnipay-paytrace",
+  "name": "cartthrob/omnipay-paytrace",
   "type": "library",
   "description": "PayTrace gateway for the Omnipay payment processing library",
   "keywords": [
@@ -9,16 +9,16 @@
     "payment",
     "gateway"
   ],
-  "homepage": "https://github.com/iddqdidkfa/omnipay-paytrace",
+  "homepage": "https://github.com/CartThrob/omnipay-paytrace",
   "license": "MIT",
   "authors": [
     {
-      "name": "Oleg Ilyushyn",
-      "email": "iloa.exec@gmail.com"
+      "name": "Foster Made",
+      "email": "hello@cartthrob.com"
     }
   ],
   "autoload": {
-    "psr-4": { "unionco\\omnipay\\paytrace\\" : "src/" }
+    "psr-4": { "cartthrob\\omnipay\\paytrace\\" : "src/" }
   },
   "require": {
     "league/omnipay": "^3"
