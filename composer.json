@@ -20,9 +20,6 @@
   "autoload": {
     "psr-4": { "cartthrob\\omnipay\\paytrace\\" : "src/" }
   },
-  "require": {
-    "league/omnipay": "^3"
-  },
   "extra": {
     "branch-alias": {
       "dev-master": "1.0.x-dev"
