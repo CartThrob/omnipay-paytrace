@@ -1,11 +1,11 @@
 <?php
 
-namespace unionco\omnipay\paytrace\Test;
+namespace cartthrob\omnipay\paytrace\Test;
 
-use unionco\omnipay\paytrace\Check;
-use unionco\omnipay\paytrace\Gateway;
+use cartthrob\omnipay\paytrace\Check;
+use cartthrob\omnipay\paytrace\Gateway;
 use Omnipay\Tests\TestCase;
-use unionco\omnipay\paytrace\Exception\InvalidCheckException;
+use cartthrob\omnipay\paytrace\Exception\InvalidCheckException;
 
 class CheckTest extends TestCase
 {
@@ -34,12 +34,12 @@ class CheckTest extends TestCase
     }
 
     public function testValidateFixture() {
-        $this->assertInstanceOf('unionco\omnipay\paytrace\Check', $this->check);
+        $this->assertInstanceOf('cartthrob\omnipay\paytrace\Check', $this->check);
         $this->assertSame(null, $this->check->validate());
     }
 
     /**
-     * @expectedException \unionco\omnipay\paytrace\Exception\InvalidCheckException
+     * @expectedException \cartthrob\omnipay\paytrace\Exception\InvalidCheckException
      * @expectedExceptionMessage The bankAccount parameter is required
      */
     public function testValidateAccountNumberRequired()
@@ -49,7 +49,7 @@ class CheckTest extends TestCase
     }
 
     /**
-     * @expectedException \unionco\omnipay\paytrace\Exception\InvalidCheckException
+     * @expectedException \cartthrob\omnipay\paytrace\Exception\InvalidCheckException
      * @expectedExceptionMessage The routingNumber parameter is required
      */
     public function testValidateRountingNumberRequired()
@@ -59,7 +59,7 @@ class CheckTest extends TestCase
     }
 
     /**
-     * @expectedException \unionco\omnipay\paytrace\Exception\InvalidCheckException
+     * @expectedException \cartthrob\omnipay\paytrace\Exception\InvalidCheckException
      * @expectedExceptionMessage The billingFirstName parameter is required
      */
     public function testValidateAccountName()
@@ -69,7 +69,7 @@ class CheckTest extends TestCase
     }
 
     /**
-     * @expectedException \unionco\omnipay\paytrace\Exception\InvalidCheckException
+     * @expectedException \cartthrob\omnipay\paytrace\Exception\InvalidCheckException
      * @expectedExceptionMessage The billingLastName parameter is required
      */
     public function testValidateNumber()
@@ -79,7 +79,7 @@ class CheckTest extends TestCase
     }
 
     /**
-     * @expectedException \unionco\omnipay\paytrace\Exception\InvalidCheckException
+     * @expectedException \cartthrob\omnipay\paytrace\Exception\InvalidCheckException
      * @expectedExceptionMessage Invalid Bank Routing Number
      */
     public function testValidateParamatersFailure()

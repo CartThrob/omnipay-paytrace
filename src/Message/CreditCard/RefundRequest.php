@@ -1,6 +1,6 @@
 <?php
 
-namespace unionco\omnipay\paytrace\Message\CreditCard;
+namespace cartthrob\omnipay\paytrace\Message\CreditCard;
 
 /** @psalm-suppress PropertyNotSetInConstructor */
 class RefundRequest extends AbstractRequest
@@ -8,7 +8,7 @@ class RefundRequest extends AbstractRequest
     /** @var string */
     protected $type = 'Refund';
     /** @var string */
-    protected $responseClass = 'unionco\omnipay\paytrace\Message\CreditCard\CaptureResponse';
+    protected $responseClass = 'cartthrob\omnipay\paytrace\Message\CreditCard\CaptureResponse';
 
     /** @inheritdoc */
     public function getData()

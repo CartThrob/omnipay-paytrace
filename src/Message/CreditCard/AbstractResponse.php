@@ -1,8 +1,8 @@
 <?php
 
-namespace unionco\omnipay\paytrace\Message\CreditCard;
+namespace cartthrob\omnipay\paytrace\Message\CreditCard;
 
-abstract class AbstractResponse extends \unionco\omnipay\paytrace\Message\AbstractResponse
+abstract class AbstractResponse extends \cartthrob\omnipay\paytrace\Message\AbstractResponse
 {
     const TRANSACTION_KEY = 'TRANSACTIONID';
 }

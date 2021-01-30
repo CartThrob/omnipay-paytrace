@@ -1,8 +1,8 @@
 <?php
 
-namespace unionco\omnipay\paytrace\Message\Check;
+namespace cartthrob\omnipay\paytrace\Message\Check;
 
-use unionco\omnipay\paytrace\Message\AbstractResponse;
+use cartthrob\omnipay\paytrace\Message\AbstractResponse;
 
 class Response extends AbstractResponse
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace unionco\omnipay\paytrace\Message\CreditCard;
+namespace cartthrob\omnipay\paytrace\Message\CreditCard;
 
 /** @psalm-suppress PropertyNotSetInConstructor */
 class AuthorizeResponse extends AbstractResponse

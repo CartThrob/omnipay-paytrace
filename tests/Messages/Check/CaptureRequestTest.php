@@ -1,12 +1,12 @@
 <?php
 
-namespace unionco\omnipay\paytrace\Message\Check;
+namespace cartthrob\omnipay\paytrace\Message\Check;
 
 use Omnipay\Tests\TestCase;
 
 class CaptureRequestTest extends TestCase
 {
-    /** @var  \unionco\omnipay\paytrace\Message\Check\CaptureRequest $request */
+    /** @var  \cartthrob\omnipay\paytrace\Message\Check\CaptureRequest $request */
     private $request;
 
     public function setUp()

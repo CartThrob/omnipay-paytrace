@@ -1,8 +1,8 @@
 <?php
 
-namespace unionco\omnipay\paytrace\Message\CreditCard;
+namespace cartthrob\omnipay\paytrace\Message\CreditCard;
 
-abstract class AbstractRequest extends \unionco\omnipay\paytrace\Message\AbstractRequest
+abstract class AbstractRequest extends \cartthrob\omnipay\paytrace\Message\AbstractRequest
 {
     protected $method = 'ProcessTranx';
 

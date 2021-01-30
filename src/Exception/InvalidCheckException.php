@@ -1,6 +1,6 @@
 <?php
 
-namespace unionco\omnipay\paytrace\Exception;
+namespace cartthrob\omnipay\paytrace\Exception;
 
 use Omnipay\Common\Exception\OmnipayException;
 

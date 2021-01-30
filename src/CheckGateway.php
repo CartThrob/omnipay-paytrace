@@ -1,6 +1,6 @@
 <?php
 
-namespace unionco\omnipay\paytrace;
+namespace cartthrob\omnipay\paytrace;
 
 class CheckGateway extends AbstractGateway
 {

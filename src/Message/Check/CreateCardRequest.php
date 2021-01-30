@@ -1,14 +1,14 @@
 <?php
 
-namespace unionco\omnipay\paytrace\Message\Check;
+namespace cartthrob\omnipay\paytrace\Message\Check;
 
-use unionco\omnipay\paytrace\Exception\InvalidCheckException;
+use cartthrob\omnipay\paytrace\Exception\InvalidCheckException;
 
 /** @psalm-suppress PropertyNotSetInConstructor */
 class CreateCardRequest extends AuthorizeRequest
 {
     protected $type = 'CreateCustomer';
-    protected $responseClass = 'unionco\omnipay\paytrace\Message\CreditCard\CreateCardResponse';
+    protected $responseClass = 'cartthrob\omnipay\paytrace\Message\CreditCard\CreateCardResponse';
 
     /**
      * @inheritdoc
