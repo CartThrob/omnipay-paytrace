@@ -1,6 +1,6 @@
 <?php
 
-namespace cartthrob\omnipay\paytrace;
+namespace Omnipay\Paytrace;
 
 class CheckGatewayTest extends \Omnipay\Tests\GatewayTestCase
 {
@@ -30,7 +30,7 @@ class CheckGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $this->gateway->setPassword('demo123');
         $response = $this->gateway->authorize($this->options)->send();
-        $this->assertInstanceOf('\cartthrob\omnipay\paytrace\Message\Check\Response', $response);
+        $this->assertInstanceOf('\Omnipay\Paytrace\Message\Check\Response', $response);
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
         $this->assertNotEmpty($response->getTransactionReference());
@@ -47,7 +47,7 @@ class CheckGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $this->gateway->setPassword('111');
         $response = $this->gateway->authorize($this->options)->send();
-        $this->assertInstanceOf('\cartthrob\omnipay\paytrace\Message\Check\Response', $response);
+        $this->assertInstanceOf('\Omnipay\Paytrace\Message\Check\Response', $response);
         $this->assertFalse($response->isSuccessful());
         $this->assertSame('998', $response->getCode());
         $this->assertSame('Log in failed.', $response->getMessage());
@@ -59,7 +59,7 @@ class CheckGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $this->gateway->setPassword('demo123');
         $response = $this->gateway->purchase($this->options)->send();
-        $this->assertInstanceOf('\cartthrob\omnipay\paytrace\Message\Check\Response', $response);
+        $this->assertInstanceOf('\Omnipay\Paytrace\Message\Check\Response', $response);
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
         $this->assertNotEmpty($response->getTransactionReference());
@@ -76,7 +76,7 @@ class CheckGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $this->gateway->setPassword('111');
         $response = $this->gateway->purchase($this->options)->send();
-        $this->assertInstanceOf('\cartthrob\omnipay\paytrace\Message\Check\Response', $response);
+        $this->assertInstanceOf('\Omnipay\Paytrace\Message\Check\Response', $response);
         $this->assertFalse($response->isSuccessful());
         $this->assertSame('998', $response->getCode());
         $this->assertSame('Log in failed.', $response->getMessage());
@@ -88,7 +88,7 @@ class CheckGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $this->gateway->setPassword('demo123');
         $response = $this->gateway->refund($this->options)->send();
-        $this->assertInstanceOf('\cartthrob\omnipay\paytrace\Message\Check\Response', $response);
+        $this->assertInstanceOf('\Omnipay\Paytrace\Message\Check\Response', $response);
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
         $this->assertNotEmpty($response->getTransactionReference());
@@ -107,7 +107,7 @@ class CheckGatewayTest extends \Omnipay\Tests\GatewayTestCase
         $options = array_merge(array('transactionReference' => 89731989), $this->options);
         unset($options['check']);
         $response = $this->gateway->refund($options)->send();
-        $this->assertInstanceOf('\cartthrob\omnipay\paytrace\Message\Check\Response', $response);
+        $this->assertInstanceOf('\Omnipay\Paytrace\Message\Check\Response', $response);
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
         $this->assertSame('89731989', $response->getTransactionReference());
@@ -124,7 +124,7 @@ class CheckGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $this->gateway->setPassword('111');
         $response = $this->gateway->refund($this->options)->send();
-        $this->assertInstanceOf('\cartthrob\omnipay\paytrace\Message\Check\Response', $response);
+        $this->assertInstanceOf('\Omnipay\Paytrace\Message\Check\Response', $response);
         $this->assertFalse($response->isSuccessful());
         $this->assertSame('998', $response->getCode());
         $this->assertSame('Log in failed.', $response->getMessage());
@@ -136,7 +136,7 @@ class CheckGatewayTest extends \Omnipay\Tests\GatewayTestCase
 
         $this->gateway->setPassword('demo123');
         $response = $this->gateway->createCard($this->options)->send();
-        $this->assertInstanceOf('\cartthrob\omnipay\paytrace\Message\CreditCard\CreateCardResponse', $response);
+        $this->assertInstanceOf('\Omnipay\Paytrace\Message\CreditCard\CreateCardResponse', $response);
         $this->assertTrue($response->isSuccessful());
         $this->assertFalse($response->isRedirect());
         $this->assertNull($response->getTransactionReference());

@@ -1,6 +1,6 @@
 <?php
 
-namespace cartthrob\omnipay\paytrace\Message\CreditCard;
+namespace Omnipay\Paytrace\Message\CreditCard;
 
 class CreateCardResponse extends AuthorizeResponse
 {

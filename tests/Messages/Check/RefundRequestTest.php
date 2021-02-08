@@ -1,12 +1,12 @@
 <?php
 
-namespace cartthrob\omnipay\paytrace\Message\Check;
+namespace Omnipay\Paytrace\Message\Check;
 
 use Omnipay\Tests\TestCase;
 
 class RefundRequestTest extends TestCase
 {
-    /** @var  \cartthrob\omnipay\paytrace\Message\Check\RefundRequest $request */
+    /** @var  \Omnipay\Paytrace\Message\Check\RefundRequest $request */
     private $request;
 
     public function setUp()

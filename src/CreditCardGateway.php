@@ -1,6 +1,6 @@
 <?php
 
-namespace cartthrob\omnipay\paytrace;
+namespace Omnipay\Paytrace;
 
 class CreditCardGateway extends AbstractGateway
 {

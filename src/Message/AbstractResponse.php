@@ -1,6 +1,6 @@
 <?php
 
-namespace cartthrob\omnipay\paytrace\Message;
+namespace Omnipay\Paytrace\Message;
 
 use Omnipay\Common\Message\RequestInterface;
 

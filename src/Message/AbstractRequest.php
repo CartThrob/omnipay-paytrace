@@ -1,6 +1,6 @@
 <?php
 
-namespace cartthrob\omnipay\paytrace\Message;
+namespace Omnipay\Paytrace\Message;
 
 use Omnipay\Common\Message\ResponseInterface;
 
@@ -131,7 +131,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     }
 
     /**
-     * @return \Omnipay\Common\CreditCard|\cartthrob\omnipay\paytrace\Check|null
+     * @return \Omnipay\Common\CreditCard|\Omnipay\Paytrace\Check|null
      */
     protected function getBillingSource()
     {

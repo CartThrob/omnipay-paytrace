@@ -1,15 +1,15 @@
 <?php
 
-namespace cartthrob\omnipay\paytrace\Message\Check;
+namespace Omnipay\Paytrace\Message\Check;
 
-use cartthrob\omnipay\paytrace\Check;
+use Omnipay\Paytrace\Check;
 
-abstract class AbstractRequest extends \cartthrob\omnipay\paytrace\Message\AbstractRequest
+abstract class AbstractRequest extends \Omnipay\Paytrace\Message\AbstractRequest
 {
-    protected $responseClass = 'cartthrob\omnipay\paytrace\Message\Check\Response';
+    protected $responseClass = 'Omnipay\Paytrace\Message\Check\Response';
 
     /**
-     * @return \cartthrob\omnipay\paytrace\Check|null
+     * @return \Omnipay\Paytrace\Check|null
      */
     public function getCheck()
     {

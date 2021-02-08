@@ -1,6 +1,6 @@
 <?php
 
-namespace cartthrob\omnipay\paytrace\Message\Check;
+namespace Omnipay\Paytrace\Message\Check;
 
 /** @psalm-suppress PropertyNotSetInConstructor */
 class CaptureRequest extends AbstractRequest

@@ -1,8 +1,8 @@
 <?php
 
-namespace cartthrob\omnipay\paytrace\Message\Check;
+namespace Omnipay\Paytrace\Message\Check;
 
-use cartthrob\omnipay\paytrace\Exception\InvalidCheckException;
+use Omnipay\Paytrace\Exception\InvalidCheckException;
 
 
 /** @psalm-suppress PropertyNotSetInConstructor */
