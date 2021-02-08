@@ -18,7 +18,7 @@
     }
   ],
   "autoload": {
-    "psr-4": { "omnipay\\paytrace\\" : "src/" }
+    "psr-4": { "Omnipay\\Paytrace\\" : "src/" }
   },
   "extra": {
     "branch-alias": {
