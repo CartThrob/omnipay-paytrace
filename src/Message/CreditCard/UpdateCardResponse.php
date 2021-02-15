@@ -2,7 +2,7 @@
 
 namespace Omnipay\Paytrace\Message\CreditCard;
 
-class UpdateCardRequest extends CreateCardRequest
+class UpdateCardResponse extends CreateCardResponse
 {
     /** @var string */
     protected $type = 'UpdateCustomer';

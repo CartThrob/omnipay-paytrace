@@ -2,10 +2,12 @@
 
 namespace Omnipay\Paytrace\Message\CreditCard;
 
-/** @psalm-suppress PropertyNotSetInConstructor */
-class CreateCardRequest extends AuthorizeRequest
+class CreateCardRequest extends AbstractRequest;
 {
+    /** @var string */
     protected $type = 'CreateCustomer';
+
+    /** @var string */
     protected $responseClass = 'Omnipay\Paytrace\Message\CreditCard\CreateCardResponse';
 
     /**

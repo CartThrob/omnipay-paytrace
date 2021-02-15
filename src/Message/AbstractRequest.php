@@ -22,24 +22,20 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     public function sendData($data)
     {
         $headers = [
-            'MIME-Version' => '1.0',
-            'Content-type' => 'application/x-www-form-urlencoded',
-            'Contenttransfer-encoding' => 'text',
+            'Content-type' => 'application/json',
+            'Authorization' => 'Bearer ' . $this->getToken(),
         ];
+
         $httpResponse = $this->httpClient->request(
             'POST',
             $this->getEndpoint(),
             $headers,
-            'parmlist=' . $this->preparePostData($data)
+            $data
         );
 
         $responseClass = $this->responseClass;
 
-        /**
-         * @var ResponseInterface
-         * @psalm-suppress InvalidStringClass
-         **/
-        $response = new $responseClass($this, $httpResponse->getBody());
+        $response = new $responseClass($this, json_decode((string) $httpResponse->getBody()->getContents()));
         $this->response = $response;
 
         return $response;
@@ -65,6 +61,57 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     /**
      * @return string
      */
+    public function getHpfToken()
+    {
+        return $this->getParameter('hpf_token');
+    }
+
+    /**
+     * @param string $value
+     * @return self
+     */
+    public function setHpfToken($value)
+    {
+        return $this->setParameter('hpf_token', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getEncKey()
+    {
+        return $this->getParameter('enc_key');
+    }
+
+    /**
+     * @param string $value
+     * @return self
+     */
+    public function setEncKey($value)
+    {
+        return $this->setParameter('enc_key', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getIntegratorId()
+    {
+        return $this->getParameter('integrator_id');
+    }
+
+    /**
+     * @param string $value
+     * @return self
+     */
+    public function setIntegratorId($value)
+    {
+        return $this->setParameter('integrator_id', $value);
+    }
+
+    /**
+     * @return string
+     */
     public function getPassword()
     {
         return $this->getParameter('password');
@@ -77,6 +124,18 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     public function setPassword($value)
     {
         return $this->setParameter('password', $value);
+    }
+
+    /**
+     * Get HTTP Method.
+     *
+     * This is nearly always POST but can be over-ridden in sub classes.
+     *
+     * @return string
+     */
+    protected function getHttpMethod()
+    {
+        return 'POST';
     }
 
     /**
@@ -99,9 +158,26 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     /**
      * @return string
      */
+    public function getVersion()
+    {
+        return $this->getParameter('version');
+    }
+
+    /**
+     * @param string $value
+     * @return self
+     */
+    public function setVersion($value)
+    {
+        return $this->setParameter('version', $value);
+    }
+
+    /**
+     * @return string
+     */
     public function getInvoiceId()
     {
-        return $this->getParameter('invoiceId');
+        return $this->getParameter('invoice_id');
     }
 
     /**
@@ -110,7 +186,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
      */
     public function setInvoiceId($value)
     {
-        return $this->setParameter('invoiceId', $value);
+        return $this->setParameter('invoice_id', $value);
     }
 
     /**
@@ -140,8 +216,6 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
     /**
      * @return array
-     *
-     * @psalm-return array{AMOUNT: string, DESCRIPTION: string, INVOICE: mixed, BNAME?: mixed, PHONE?: mixed, EMAIL?: mixed, BADDRESS?: mixed, BADDRESS2?: mixed, BCITY?: mixed, BCOUNTRY?: mixed, BSTATE?: mixed, BZIP?: mixed, SADDRESS?: mixed, SADDRESS2?: mixed, SCITY?: mixed, SCOUNTRY?: mixed, SSTATE?: mixed, SZIP?: mixed}
      */
     protected function getBillingData()
     {
@@ -175,21 +249,5 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         $data['SZIP'] = $source->getShippingPostcode();
 
         return $data;
-    }
-
-    /**
-     * @param array $data
-     * @return string
-     */
-    protected function preparePostData($data)
-    {
-        $postData = '';
-        foreach ($data as $key => $value) {
-            if (empty($value)) {
-                continue;
-            }
-            $postData .= urlencode("{$key}~{$value}|");
-        }
-        return $postData;
     }
 }

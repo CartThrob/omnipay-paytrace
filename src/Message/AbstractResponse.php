@@ -15,16 +15,7 @@ abstract class AbstractResponse extends \Omnipay\Common\Message\AbstractResponse
      */
     public function __construct(RequestInterface $request, $data)
     {
-        $parsedData = [];
-        $responseArr = explode('|', (string)$data);
-        foreach ($responseArr as $pair) {
-            if (strlen(trim($pair)) == 0) {
-                continue;
-            }
-            $tmp = explode('~', $pair);
-            $parsedData[$tmp[0]] = $tmp[1];
-        }
-        parent::__construct($request, $parsedData);
+        parent::__construct($request, $data);
     }
 
     /**
@@ -32,7 +23,7 @@ abstract class AbstractResponse extends \Omnipay\Common\Message\AbstractResponse
      */
     public function getTransactionReference()
     {
-        return isset($this->data[static::TRANSACTION_KEY]) ? $this->data[static::TRANSACTION_KEY] : null;
+        return $this->data->transaction_id ?? null;
     }
 
     /**
@@ -40,16 +31,13 @@ abstract class AbstractResponse extends \Omnipay\Common\Message\AbstractResponse
      */
     public function getMessage()
     {
-        if ($this->isSuccessful()) {
-            return isset($this->data['RESPONSE']) ? substr($this->data['RESPONSE'], 5) : null;
-        } else {
-            if (isset($this->data['ERROR'])) {
-                $errorParts = explode('. ', $this->data['ERROR'], 2);
-            } else {
-                $errorParts = explode('. ', $this->data['RESPONSE'], 2);
+        if (isset($this->data->errors)) {
+            foreach ($this->data->errors as $key => $error) {
+                return $error[0] ?? $this->data->status_message;
             }
-            return (count($errorParts) == 2) ? $errorParts[1] : null;
         }
+
+        return $this->data->status_message ?? '';
     }
 
     /**
@@ -57,15 +45,6 @@ abstract class AbstractResponse extends \Omnipay\Common\Message\AbstractResponse
      */
     public function getCode()
     {
-        if ($this->isSuccessful()) {
-            return isset($this->data['RESPONSE']) ? substr($this->data['RESPONSE'], 0, 3) : null;
-        } else {
-            if (isset($this->data['ERROR'])) {
-                $errorParts = explode('. ', $this->data['ERROR'], 2);
-            } else {
-                $errorParts = explode('. ', $this->data['RESPONSE'], 2);
-            }
-            return (count($errorParts) == 2) ? $errorParts[0] : null;
-        }
+        return $this->data->response_code ?? null;
     }
 }

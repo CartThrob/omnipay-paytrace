@@ -4,7 +4,7 @@ namespace Omnipay\Paytrace\Message\CreditCard;
 
 use Omnipay\Paytrace\Message\AbstractResponse;
 
-class CaptureResponse extends AbstractResponse
+class RefundResponse extends AbstractResponse
 {
     /**
      * @inheritdoc

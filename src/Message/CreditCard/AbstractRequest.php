@@ -13,8 +13,6 @@ abstract class AbstractRequest extends \Omnipay\Paytrace\Message\AbstractRequest
 
     /**
      * @return array
-     *
-     * @psalm-return array{TERMS: string, UN: mixed, PSWD: mixed, METHOD: mixed, TRANXTYPE: mixed}
      */
     protected function getBaseData()
     {
@@ -29,8 +27,6 @@ abstract class AbstractRequest extends \Omnipay\Paytrace\Message\AbstractRequest
 
     /**
      * @return (false|string)[]
-     *
-     * @psalm-return array{CC: string, EXPYR: false|string, EXPMNTH: string, CSC: string}
      */
     protected function getCardData()
     {

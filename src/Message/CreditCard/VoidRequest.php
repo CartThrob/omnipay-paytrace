@@ -2,8 +2,8 @@
 
 namespace Omnipay\Paytrace\Message\CreditCard;
 
-/** @psalm-suppress PropertyNotSetInConstructor */
 class VoidRequest extends CaptureRequest
 {
+    /** @var string */
     protected $type = 'Void';
 }
