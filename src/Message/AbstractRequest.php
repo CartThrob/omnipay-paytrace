@@ -207,7 +207,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     }
 
     /**
-     * @return \Omnipay\Common\CreditCard|\Omnipay\Paytrace\Check|null
+     * @return \Omnipay\Common\CreditCard|null
      */
     protected function getBillingSource()
     {
