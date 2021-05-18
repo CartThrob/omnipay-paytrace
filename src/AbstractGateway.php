@@ -3,7 +3,6 @@
 namespace Omnipay\Paytrace;
 
 use Omnipay\Common\Message\AbstractRequest;
-use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Paytrace\Message\Token\TokenRequest;
 
 class AbstractGateway extends \Omnipay\Common\AbstractGateway
@@ -31,7 +30,6 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
     }
 
     /**
-     * @param array $params
      * @return AbstractRequest
      */
     public function authorize(array $params = [])
@@ -43,7 +41,6 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
     }
 
     /**
-     * @param array $params
      * @return AbstractRequest
      */
     public function createCard(array $params = [])
@@ -55,7 +52,6 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
     }
 
     /**
-     * @param array $params
      * @return AbstractRequest
      */
     public function updateCard(array $params = [])
@@ -67,7 +63,6 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
     }
 
     /**
-     * @param array $params
      * @return AbstractRequest
      */
     public function capture(array $params = [])
@@ -76,7 +71,6 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
     }
 
     /**
-     * @param array $params
      * @return AbstractRequest
      */
     public function purchase(array $params = [])
@@ -85,7 +79,6 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
     }
 
     /**
-     * @param array $params
      * @return AbstractRequest
      */
     public function void(array $params = [])
@@ -94,7 +87,6 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
     }
 
     /**
-     * @param array $params
      * @return AbstractRequest
      */
     public function refund(array $params = [])
@@ -218,7 +210,7 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
     /**
      * Get OAuth 2.0 access token expiry time.
      *
-     * @return integer
+     * @return int
      */
     public function getTokenExpires()
     {
@@ -228,7 +220,7 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
     /**
      * Set OAuth 2.0 access token expiry time.
      *
-     * @param integer $value
+     * @param int $value
      * @return RestGateway provides a fluent interface
      */
     public function setTokenExpires($value)
@@ -263,7 +255,6 @@ class AbstractGateway extends \Omnipay\Common\AbstractGateway
      * token request or the current token has expired).
      *
      * @param string $class
-     * @param array $parameters
      * @return \Omnipay\Paytrace\Message\AbstractRequest
      */
     public function createRequest($class, array $parameters = [])

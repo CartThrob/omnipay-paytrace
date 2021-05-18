@@ -2,7 +2,7 @@
 
 namespace Omnipay\Paytrace\Message\CreditCard;
 
-class CreateCardRequest extends AbstractRequest;
+class CreateCardRequest extends AbstractRequest
 {
     /** @var string */
     protected $type = 'CreateCustomer';
@@ -11,7 +11,7 @@ class CreateCardRequest extends AbstractRequest;
     protected $responseClass = 'Omnipay\Paytrace\Message\CreditCard\CreateCardResponse';
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getData()
     {
@@ -24,6 +24,7 @@ class CreateCardRequest extends AbstractRequest;
         if ($this->getTestMode()) {
             $data['TEST'] = 'Y';
         }
+
         return array_merge($data, $this->getBillingData());
     }
 }

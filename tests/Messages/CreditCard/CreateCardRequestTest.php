@@ -6,7 +6,7 @@ use Omnipay\Tests\TestCase;
 
 class CreateCardRequestTest extends TestCase
 {
-    /** @var  \unionco\omnipay\paytrace\Message\CreditCard\CreateCardRequest $request */
+    /** @var \unionco\omnipay\paytrace\Message\CreditCard\CreateCardRequest */
     private $request;
 
     public function setUp()
@@ -42,7 +42,7 @@ class CreateCardRequestTest extends TestCase
                 'shippingCountry' => 'US',
                 'shippingPhone' => '(555) 987-6543',
             ],
-            'testmode' => 1
+            'testmode' => 1,
         ];
 
         $this->request->initialize($expectedData);

@@ -6,7 +6,7 @@ use Omnipay\Tests\TestCase;
 
 class UpdateCardRequestTest extends TestCase
 {
-    /** @var  \Omnipay\Paytrace\Message\CreditCard\UpdateCardRequest $request */
+    /** @var \Omnipay\Paytrace\Message\CreditCard\UpdateCardRequest */
     private $request;
 
     public function setUp()
@@ -44,7 +44,7 @@ class UpdateCardRequestTest extends TestCase
                 'shippingCountry' => 'US',
                 'shippingPhone' => '(555) 987-6543',
             ],
-            'testmode' => 1
+            'testmode' => 1,
         ];
 
         $this->request->initialize($expectedData);

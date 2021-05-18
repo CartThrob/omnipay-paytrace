@@ -2,8 +2,6 @@
 
 namespace Omnipay\Paytrace\Message\CreditCard;
 
-use Omnipay\Paytrace\Message\AbstractRequest;
-
 class PurchaseRequest extends AuthorizeRequest
 {
     /** @var string */
@@ -30,7 +28,8 @@ class PurchaseRequest extends AuthorizeRequest
             'hpf_token' => $this->getParameter('hpf_token'),
             'enc_key' => $this->getParameter('enc_key'),
             'integrator_id' => $this->getParameter('integrator_id'),
-            'invoice_id' => $this->getParameter('invoice_id')
+            'invoice_id' => $this->getParameter('invoice_id'),
+            'billing_address' => $this->getParameter('billing_address'),
         ]);
     }
 }

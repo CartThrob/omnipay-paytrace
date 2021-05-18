@@ -7,7 +7,7 @@ class CreateCardResponse extends AuthorizeResponse
     /**
      * Is the response successful?
      *
-     * @return boolean
+     * @return bool
      */
     public function isSuccessful()
     {

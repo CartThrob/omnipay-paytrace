@@ -11,6 +11,14 @@ class CaptureRequest extends AbstractRequest
     protected $responseClass = 'Omnipay\Paytrace\Message\CreditCard\CaptureResponse';
 
     /**
+     * @return string
+     */
+    public function getEndpoint()
+    {
+        return parent::getEndpoint() . $this->getVersion() . '/transactions/authorization/capture';
+    }
+
+    /**
      * @return array|mixed
      * @throws \Omnipay\Common\Exception\InvalidRequestException
      */
@@ -18,12 +26,10 @@ class CaptureRequest extends AbstractRequest
     {
         $this->validate('transactionReference');
         $data = $this->getBaseData();
-        $data['TRANXID'] = $this->getTransactionReference();
 
-        if ($this->getTestMode()) {
-            $data['TEST'] = 'Y';
-        }
+        $data['amount'] = $this->getAmount();
+        $data['transaction_id'] = $this->getTransactionReference();
 
-        return $data;
+        return json_encode($data);
     }
 }

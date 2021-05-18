@@ -4,7 +4,7 @@ namespace Omnipay\Paytrace;
 
 class CreditCardGatewayTest extends \Omnipay\Tests\GatewayTestCase
 {
-    /** @var  CreditCardGateway */
+    /** @var CreditCardGateway */
     protected $gateway;
     protected $options;
 
@@ -71,7 +71,7 @@ class CreditCardGatewayTest extends \Omnipay\Tests\GatewayTestCase
         $this->setMockHttpResponse('CreditCard/AuthorizeResponseSuccess.txt');
 
         $this->gateway->setPassword('demo123');
-        $options = array_merge(array('cardReference' => 1234567890), $this->options);
+        $options = array_merge(['cardReference' => 1234567890], $this->options);
         $response = $this->gateway->purchase($options)->send();
         $this->assertInstanceOf('\Omnipay\Paytrace\Message\CreditCard\AuthorizeResponse', $response);
         $this->assertTrue($response->isSuccessful());
@@ -118,7 +118,7 @@ class CreditCardGatewayTest extends \Omnipay\Tests\GatewayTestCase
         $this->setMockHttpResponse('CreditCard/RefundResponseSuccess.txt');
 
         $this->gateway->setPassword('demo123');
-        $options = array_merge(array('transactionReference' => 89731989), $this->options);
+        $options = array_merge(['transactionReference' => 89731989], $this->options);
         unset($options['card']);
         $response = $this->gateway->refund($options)->send();
         $this->assertInstanceOf('\Omnipay\Paytrace\Message\CreditCard\CaptureResponse', $response);

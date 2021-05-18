@@ -5,7 +5,7 @@ namespace Omnipay\Paytrace;
 class CreditCardGateway extends AbstractGateway
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function getName()
     {

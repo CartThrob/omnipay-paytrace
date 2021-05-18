@@ -7,10 +7,10 @@ use Omnipay\Paytrace\Message\AbstractResponse;
 class CaptureResponse extends AbstractResponse
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function isSuccessful()
     {
-        return !isset($this->data['ERROR']) || empty($this->data['ERROR']);
+        return empty($this->getMessage());
     }
 }

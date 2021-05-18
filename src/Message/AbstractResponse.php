@@ -9,7 +9,6 @@ abstract class AbstractResponse extends \Omnipay\Common\Message\AbstractResponse
     const TRANSACTION_KEY = '';
 
     /**
-     * @param RequestInterface $request
      * @param mixed $data
      * @return self
      */

@@ -10,7 +10,15 @@ class RefundRequest extends AbstractRequest
     /** @var string */
     protected $responseClass = 'Omnipay\Paytrace\Message\CreditCard\RefundResponse';
 
-    /** @inheritdoc */
+    /**
+     * @return string
+     */
+    public function getEndpoint()
+    {
+        return parent::getEndpoint() . $this->getVersion() . '/transactions/refund/for_transaction';
+    }
+
+    /** {@inheritdoc} */
     public function getData()
     {
         if ($this->getCard()) {
@@ -31,6 +39,6 @@ class RefundRequest extends AbstractRequest
             }
         }
 
-        return $data;
+        return json_encode($data);
     }
 }

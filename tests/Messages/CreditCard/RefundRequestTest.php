@@ -6,7 +6,7 @@ use Omnipay\Tests\TestCase;
 
 class RefundRequestTest extends TestCase
 {
-    /** @var  \Omnipay\Paytrace\Message\CreditCard\RefundRequest $request */
+    /** @var \Omnipay\Paytrace\Message\CreditCard\RefundRequest */
     private $request;
 
     public function setUp()

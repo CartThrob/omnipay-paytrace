@@ -12,24 +12,5 @@ class AuthorizeRequest extends AbstractRequest
 
     public function getData()
     {
-
     }
-//    /**
-//     * @inheritdoc
-//     */
-//    public function getData()
-//    {
-//        return $this->getBaseData();
-//////        $this->validate('amount');
-////        $data = $this->getBaseData();
-////        if ($this->getCardReference()) {
-////            $data['CUSTID'] = $this->getCardReference();
-////        } else {
-////            $data = array_merge($data, $this->getCardData());
-////        }
-////        if ($this->getTestMode()) {
-////            $data['TEST'] = 'Y';
-////        }
-////        return array_merge($data, $this->getBillingData());
-//    }
 }

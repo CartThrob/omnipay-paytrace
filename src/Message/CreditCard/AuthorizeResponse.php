@@ -7,7 +7,7 @@ class AuthorizeResponse extends AbstractResponse
     /**
      * Is the response successful?
      *
-     * @return boolean
+     * @return bool
      */
     public function isSuccessful()
     {

@@ -6,13 +6,13 @@ use Omnipay\Common\Message\ResponseInterface;
 
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
-    /** @var string $method */
+    /** @var string */
     protected $method;
 
-    /** @var string $type */
+    /** @var string */
     protected $type;
 
-    /** @var string $responseClass */
+    /** @var string */
     protected $responseClass;
 
     /**
@@ -35,7 +35,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 
         $responseClass = $this->responseClass;
 
-        $response = new $responseClass($this, json_decode((string) $httpResponse->getBody()->getContents()));
+        $response = new $responseClass($this, json_decode((string)$httpResponse->getBody()->getContents()));
         $this->response = $response;
 
         return $response;
@@ -73,6 +73,23 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     public function setHpfToken($value)
     {
         return $this->setParameter('hpf_token', $value);
+    }
+
+    /**
+     * @return string
+     */
+    public function getBillingAddress()
+    {
+        return $this->getParameter('billing_address');
+    }
+
+    /**
+     * @param string $value
+     * @return self
+     */
+    public function setBillingAddress($value)
+    {
+        return $this->setParameter('billing_address', $value);
     }
 
     /**

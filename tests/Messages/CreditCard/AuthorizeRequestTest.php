@@ -6,7 +6,7 @@ use Omnipay\Tests\TestCase;
 
 class AuthorizeRequestTest extends TestCase
 {
-    /** @var  \Omnipay\Paytrace\Message\CreditCard\AuthorizeRequest $request */
+    /** @var \Omnipay\Paytrace\Message\CreditCard\AuthorizeRequest */
     private $request;
 
     public function setUp()

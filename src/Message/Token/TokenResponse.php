@@ -7,7 +7,7 @@ use Omnipay\Paytrace\Message\AbstractResponse;
 class TokenResponse extends AbstractResponse
 {
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function isSuccessful()
     {

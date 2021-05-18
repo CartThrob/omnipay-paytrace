@@ -6,7 +6,7 @@ use Omnipay\Tests\TestCase;
 
 class CaptureRequestTest extends TestCase
 {
-    /** @var  \unionco\omnipay\paytrace\Message\CreditCard\CaptureRequest $request */
+    /** @var \unionco\omnipay\paytrace\Message\CreditCard\CaptureRequest */
     private $request;
 
     public function setUp()

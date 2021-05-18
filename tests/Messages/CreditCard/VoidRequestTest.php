@@ -6,7 +6,7 @@ use Omnipay\Tests\TestCase;
 
 class VoidRequestTest extends TestCase
 {
-    /** @var  \unionco\omnipay\paytrace\Message\CreditCard\VoidRequest $request */
+    /** @var \unionco\omnipay\paytrace\Message\CreditCard\VoidRequest */
     private $request;
 
     public function setUp()

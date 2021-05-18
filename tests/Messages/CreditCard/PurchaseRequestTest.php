@@ -6,7 +6,7 @@ use Omnipay\Tests\TestCase;
 
 class PurchaseRequestTest extends TestCase
 {
-    /** @var  \unionco\omnipay\paytrace\Message\CreditCard\PurchaseRequest $request */
+    /** @var \unionco\omnipay\paytrace\Message\CreditCard\PurchaseRequest */
     private $request;
 
     public function setUp()
